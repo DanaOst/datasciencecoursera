@@ -1,0 +1,880 @@
+plot(new_x, transformation(new_x),lty=1, xlab="VAR1". ylab = "TARGET", ylim = c(0,1))
+plot(new_x, transformation(new_x),lty=1, xlab="VAR1", ylab = "TARGET", ylim = c(0,1))
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1))
+SalesforceData$TARGET
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1
+SalesforceData_TARGET[
+]
+points(SalesforceData$VAR1,SalesforceData_TARGET)
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1))#
+points(SalesforceData$VAR1,SalesforceData_TARGET, pch=16)
+points(SalesforceData$VAR1,jiggle(SalesforceData_TARGET), pch=16)
+jiggle
+jiggle = function(x) rnorm(x,0,1)#
+points(SalesforceData$VAR1,jiggle(SalesforceData_TARGET), pch=16)
+jiggle = function(x) rnorm(x,0,.1)#
+points(SalesforceData$VAR1,jiggle(SalesforceData_TARGET), pch=16)
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1))#
+jiggle = function(x) rnorm(x,0,.1)#
+points(SalesforceData$VAR1,jiggle(SalesforceData_TARGET), pch=16)
+jiggle(SalesforceData_TARGET)
+jiggle(0)
+jiggle = function(x) rnorm(1,x,.1)#
+points(SalesforceData$VAR1,jiggle(SalesforceData_TARGET), pch=16)
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.1)), pch=16)
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.1), pch=16)
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1), axes=FALSE)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+summary(my_model)
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+par(mfrow=c(2,2))#
+#VAR 1#
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 4#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 5#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 8#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+First we read in the data#
+filename = "~/Downloads/Test_Dataset_v1.csv"#
+SalesforceData = read.csv(filename)#
+dim(SalesforceData)#
+colnames(SalesforceData)#
+#
+#was to hold out outliers#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0)#
+pairs(SalesforceData[crit,3:6], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+quartz()#
+pairs(SalesforceData[crit,7:10], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+quartz()#
+pairs(SalesforceData[crit,11:15], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+Visualizing relationships amoung variables 1, 2, 3, & 4 with targets colored blue and red #
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+pairs(SalesforceData[crit,3:6], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+Simple example#
+#This bit is what they did to simulate data#
+x = runif(100,1,10) #X is the equiv of Var1 etc.#
+y = x * 3 + 2 #Y is the equiv of Target#
+y = y + rnorm(100,0,1) #adding noise to y#
+#this is what they gave you#
+plot(x,y)#
+#
+my_model = lm(y ~ x)#
+summary(my_model)#
+#
+future_x = 8#
+future_y = future_x * my_model$coefficients[2] + my_model$coefficients[1]#
+#
+points(future_x, future_y, col=2)
+SalesforceData[1,]
+my_model = glm(SalesforceData$TARGET ~ SalesforceData$VAR1 + SalesforceData$VAR2 + SalesforceData$VAR3 + SalesforceData$VAR4 + SalesforceData$VAR5 + SalesforceData$VAR6 + SalesforceData$VAR7 + SalesforceData$VAR8 + SalesforceData$VAR9 + SalesforceData$VAR10 + SalesforceData$VAR11 + SalesforceData$VAR12 + SalesforceData$VAR13, family=binomial(link = "logit")) #
+summary(my_model)
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[2]*y)#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 1#
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+Real example#
+my_model = glm(SalesforceData$TARGET ~ SalesforceData$VAR1 + SalesforceData$VAR2 + SalesforceData$VAR3 + SalesforceData$VAR4 + SalesforceData$VAR5 + SalesforceData$VAR6 + SalesforceData$VAR7 + SalesforceData$VAR8 + SalesforceData$VAR9 + SalesforceData$VAR10 + SalesforceData$VAR11 + SalesforceData$VAR12 + SalesforceData$VAR13, family=binomial(link = "logit")) #
+summary(my_model)#
+#
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 1#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[2]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR1", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))
+logit(.5)
+logit(123)
+logit(.213)
+inverse_logit(logit(.213))
+inverse_logit(logit(.213))library("MASS")
+library("MASS")
+data(menarche)
+menarche[1,]
+menarche[,1]
+menarche[,2]
+menarche[,3]
+summary(my_model)
+SalesforceData[1,]
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+plot(SalesforceData[crit,c(3,6)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+par(mfrow=c(1,2))#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+plot(SalesforceData[crit,c(3,6)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+Real example#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1.5 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)
+summary(SalesforceData)
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR1,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8,rnorm(length(SalesforceData$TARGET),SalesforceData_TARGET,.05), pch=16, cex=.5)
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+par(mfrow=c(1,2))#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+plot(SalesforceData[crit,c(3,6)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)
+summary(my_model)
+crit = which(SalesforceData$VAR3 < Inf)#
+#crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1.5 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)
+par(mfrow=c(1,2))#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+plot(SalesforceData[crit,c(3,6)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+par(mfrow=c(1,2))#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+plot(SalesforceData[crit,c(3,6)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+Real example#
+#crit = which(SalesforceData$VAR3 < Inf)#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1.5 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)#
+#
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+par(mfrow=c(1,2))#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0) #was to hold out outliers#
+plot(SalesforceData[crit,c(3,6)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+Real example#
+#crit = which(SalesforceData$VAR3 < Inf)#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1.5 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)#
+#
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+par(mfrow=c(1,2))#
+plot(SalesforceData[crit,c(3,6)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+summary(my_model)
+Real example#
+#crit = which(SalesforceData$VAR3 < Inf)#
+crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)#
+#
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+par(mfrow=c(1,2))#
+plot(SalesforceData[crit,c(3,6)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+summary(my_model)
+par(mfrow=c(1,2))#
+plot(SalesforceData[crit,c(5,6)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+plot(SalesforceData[crit,c(7,10)], main = "test", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+Real example#
+crit = which(SalesforceData$VAR3 < Inf)#
+#crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)#
+#
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+plot(SalesforceData[crit,c(6,10)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+summary(SalesforceData)
+SalesforceData[1,]
+SalesforceData[,3:15]
+apply(SalesforceData[1,],1,function(x) max(x)>1)
+apply(SalesforceData[,3:15],1,function(x) max(x)>1)
+apply(SalesforceData[,3:15],1,function(x) max(x) < 1)
+crit = apply(SalesforceData[,3:15],1,function(x) max(x) < 1)
+length(crit)
+SalesforceData[(-crit)[1],3:15]
+SalesforceData[-crit,3:15]
+SalesforceData[-crit,3:15][1,]
+SalesforceData[crit,3:15][1,]
+crit = apply(SalesforceData[,3:15],1,function(x) max(x) > 1)
+SalesforceData[crit,3:15][1,]
+SalesforceData[crit,3:15][2,]
+SalesforceData[crit,3:15][3,]
+length(crit)
+dim(SalesforceData)
+crit = which(apply(SalesforceData[,3:15],1,function(x) max(x) > 1))
+length(crit)
+crit = which(apply(SalesforceData[,3:15],1,function(x) max(x) < 1))
+crit
+SalesforceData[crit,3:15]
+range(SalesforceData[crit,3:15])
+crit = which(apply(SalesforceData[,3:15],1,function(x) max(x) < 1))#
+#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+VAR 5#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[6]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR5", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR5[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+VAR 8#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[9]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR8", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR8[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+plot(SalesforceData[crit,c(6,10)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+plot(SalesforceData[crit,c(6,11)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+plot(SalesforceData$Var3[crit], SalesforceData$Var10[crit], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+plot(SalesforceData[crit,c(6,10)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+plot(SalesforceData[crit,c(5,7)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+Real example#
+crit = which(SalesforceData$VAR3 < 2)#
+#crit = which(SalesforceData$VAR3 < Inf)#
+#crit = which(SalesforceData$VAR3 < 2 & SalesforceData$VAR2 > 0  & SalesforceData$VAR5 < 1 & SalesforceData$VAR8 < 0.4) #was to hold out outliers#
+#crit = which(apply(SalesforceData[,3:15],1,function(x) max(x) < 1))#
+#
+my_model = glm(SalesforceData$TARGET[crit] ~ SalesforceData$VAR1[crit] + SalesforceData$VAR2[crit] + SalesforceData$VAR3[crit] + SalesforceData$VAR4[crit] + SalesforceData$VAR5[crit] + SalesforceData$VAR6[crit] + SalesforceData$VAR7[crit] + SalesforceData$VAR8[crit] + SalesforceData$VAR9[crit] + SalesforceData$VAR10[crit] + SalesforceData$VAR11[crit] + SalesforceData$VAR12[crit] + SalesforceData$VAR13[crit], family=binomial(link = "logit")) #
+summary(my_model)
+inverse_logit = function(x) exp(x)/(1+exp(x))#
+logit = function(x) log(x/(1-x))#
+new_x = seq(0,1,length=1000)#
+SalesforceData_TARGET = rep(0, times=length(SalesforceData$TARGET))#
+SalesforceData_TARGET[which(SalesforceData$TARGET == "B")] <- 1#
+#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+VAR 4#
+transformation = function(y)inverse_logit(my_model$coefficients[1] + my_model$coefficients[5]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR4", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR4[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+SalesforceData[1,]
+plot(SalesforceData[crit,c(5,6)], main = "blue points are Target B, red points are Target A", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+par(mfrow=c(1,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y)#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 3 vs. VAR4#
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+my_model$coefficients
+my_model$coefficients[-c(1,4)]
+SalesforceData[1,]
+SalesforceData[1,c(3:15)[-3]]
+apply(SalesforceData[,c(3:15)[-3]],1,mean)
+apply(SalesforceData[,c(3:15)[-3]],2,mean)
+apply(SalesforceData[,c(3:15)[-3]],1,mean)
+apply(SalesforceData[,c(3:15)[-3]],2,mean)
+length(apply(SalesforceData[,c(3:15)[-3]],2,mean))
+length(my_model$coefficients[-c(1,4)])
+apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]
+sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)])
+par(mfrow=c(1,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y + sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]))#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2)#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)
+VAR 3 vs. VAR4#
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+par(mfrow=c(1,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y + sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]))#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2, main="Marginal modeled response for Variable 3")#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 3 vs. VAR4#
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+summary(my_model)
+plot(SalesforceData[crit,c(5,7)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+SalesforceData[1,]
+ex = c(1,0.31,0.74,0.34,0.3,0.46,0.5,0,0,0,0,0,0,0)#
+inverse_logit(my_model$coefficients*ex)
+ex = c(1,0.31,0.74,0.34,0.3,0.46,0.5,0,0,0,0,0,0,0)#
+inverse_logit(sum(my_model$coefficients*ex))
+ex = c(1,0.31,0.74,0.34,0.3,0.46,0.5,0,0,0,0,0,0,0)#
+round(inverse_logit(sum(my_model$coefficients*ex)))*100
+ex = c(1,0.31,0.74,0.34,0.3,0.46,0.5,0,0,0,0,0,0,0)#
+round(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0.46,0.5,0,0,.5,0,0,0,0)#
+round(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0,0,0,0) #here's some example data which is the intercept (1) and the 13 variable values#
+round(inverse_logit(sum(my_model$coefficients*ex))*100) #this is the percent chance of it being target B
+par(mfrow=c(1,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y + sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]))#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2, main="Marginal modeled response for Variable 3")#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 3 vs. VAR4#
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])
+jpeg("~/Downloads/figure.jpeg")#
+par(mfrow=c(1,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y + sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]))#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2, main="Marginal modeled response for Variable 3")#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16, cex=.5)#
+points(new_x, transformation(new_x),type="l", col=2)#
+dev.off()
+jpeg("~/Downloads/figure.jpeg")#
+par(mfrow=c(1,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y + sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]))#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2, main="Marginal modeled response for Variable 3")#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 3 vs. VAR4#
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+dev.off()
+jpeg("~/Downloads/figure.jpeg")#
+par(mfrow=c(2,2))#
+#VAR 3#
+transformation = function(y) inverse_logit(my_model$coefficients[1] + my_model$coefficients[4]*y + sum(apply(SalesforceData[,c(3:15)[-3]],2,mean)*my_model$coefficients[-c(1,4)]))#
+plot(new_x, transformation(new_x),type="l", xlab="VAR3", ylab = "TARGET", ylim = c(0,1), axes=FALSE, col=2, main="Marginal modeled response for Variable 3")#
+axis(1)#
+axis(2, c(0,1), c("A","B"))#
+points(SalesforceData$VAR3[crit],rnorm(length(SalesforceData$TARGET[crit]),SalesforceData_TARGET[crit],.05), pch=16)#
+points(new_x, transformation(new_x),type="l", col=2)#
+#
+#VAR 3 vs. VAR4#
+plot(SalesforceData[crit,c(5,6)], main = "Target B (blue) & Target A (red)", pch = 21, bg = c("red", "blue")[unclass(SalesforceData$TARGET)[crit]])#
+dev.off()
+summary(my_model)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0,0,0,0) #here's some example data which is the intercept (1) and the 13 variable values#
+(inverse_logit(sum(my_model$coefficients*ex))*100) #this is the percent chance of it being target B
+boxplot(TARGET,VAR3)
+boxplot(TARGET~VAR3,method="jitter")
+boxplot(TARGET~VAR3,jitter=.1)
+boxplot(TARGET~VAR3)
+boxplot(TARGET,VAR3, jitter=0.1)
+boxplot(TARGET,VAR3, jitter=0.5)
+boxplot(TARGET,VAR3, jitter=0.1)
+boxplot(VAR3~TARGET, jitter=0.1)
+boxplot(VAR3~TARGET, jitter=0)
+boxplot(VAR3~TARGET, jitter=0.5)
+boxplot(VAR3~TARGET[crit], jitter=0.5)
+boxplot(VAR3[crit]~TARGET, jitter=0.5)
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR4[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR8[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR9[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+jpeg("~/Downloads/figureboxplot.jpeg")
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+jpeg("~/Downloads/figureboxplot.jpeg")
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR8[crit]~TARGET[crit], jitter=0.5)
+quartz 2
+quartz
+boxplot(VAR8[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+quartz(boxplot(VAR3[crit]~TARGET[crit])
+)
+boxplot(VAR3[crit]~TARGET[crit], jitter=0.5)
+quartz()
+boxplot(VAR4[crit]~TARGET[crit], jitter=0.5)
+boxplot(VAR4[crit]~TARGET[crit], jitter=0.5, main="VAR4")
+boxplot(VAR8[crit]~TARGET[crit])
+,main=8
+boxplot(VAR8[crit]~TARGET[crit], jitter=0.5, main="VAR8")
+boxplot(VAR5[crit]~TARGET[crit], jitter=0.5, main="VAR5")
+library(glmnet)
+use the lasso cross-validation to find the best model#
+## first step, pull out a test set of the data (10% of the data)#
+testSubsetRows = unique(as.integer(runif(375,1,3745)))#
+filterdSFdata = SalesforceData[crit,]#
+filterdTarget = SalesforceData_TARGET[crit]#
+testX = filterdSFdata[testSubsetRows,]#
+testX = testX[,c(3:15)]#
+testY = filterdTarget[testSubsetRows]#
+lassoData = filterdSFdata[-testSubsetRows,]#
+lassoX = as.matrix(lassoData[,c(3:15)])#
+lassoY = as.vector(filterdTarget[-testSubsetRows])#
+cvOut = cv.glmnet(lassoX,lassoY,family="binomial")
+plot(cvOut)
+summary(cvOut)
+names(cvOut)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0,0,0,0) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0.6,0.4,0.2,0.3) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+help(glm)
+my_model = glm(LassoData$TARGET ~ LassoData$VAR1 + LassoData$VAR2 + LassoData$VAR3 + LassoData$VAR4 + LassoData$VAR5 + LassoData$VAR6 + LassoData$VAR7 + LassoData$VAR8 + LassoData$VAR9 + LassoData$VAR10 + LassoData$VAR11 + LassoData$VAR12 + LassoDataa$VAR13, family=binomial(link = "logit"))#
+summary(my_model)
+my_model = glm(lassoData$TARGET ~ lassoData$VAR1 + lassoData$VAR2 + lassoData$VAR3 + lassoData$VAR4 + lassoData$VAR5 + lassoData$VAR6 + lassoData$VAR7 + lassoData$VAR8 + lassoData$VAR9 + lassoData$VAR10 + lassoData$VAR11 + lassoData$VAR12 + lassoDataa$VAR13, family=binomial(link = "logit"))#
+summary(my_model)
+lassoData
+head(lassoData)
+lassoData$VAR1
+my_model = glm(lassoData$TARGET ~ lassoData$VAR1 + lassoData$VAR2 + lassoData$VAR3 + lassoData$VAR4 + lassoData$VAR5 + lassoData$VAR6 + lassoData$VAR7 + lassoData$VAR8 + lassoData$VAR9 + lassoData$VAR10 + lassoData$VAR11 + lassoData$VAR12 + lassoDataa$VAR13, family=binomial(link = "logit"))#
+summary(my_model)
+my_model = glm(lassoData$TARGET ~ lassoData$VAR1 + lassoData$VAR2 + lassoData$VAR3 + lassoData$VAR4 + lassoData$VAR5 + lassoData$VAR6 + lassoData$VAR7 + lassoData$VAR8 + lassoData$VAR9 + lassoData$VAR10 + lassoData$VAR11 + lassoData$VAR12 + lassoData$VAR13, family=binomial(link = "logit"))#
+summary(my_model)
+predict(my_model,testSubsetRows,type="response")
+help(predict)
+head(testx)
+head(testX)
+predict(my_model,testSubsetRows,type="response")
+help(predict)
+predict(my_model,testSubsetRows)
+predict(my_model,testSubsetRows,type= "response")
+predict(my_model,(TestSubsetRows$TARGET[crit] ~ TestSubsetRows$VAR1[crit] + TestSubsetRows$VAR2[crit] + TestSubsetRows$VAR3[crit] + TestSubsetRows$VAR4[crit] + TestSubsetRows$VAR5[crit] + TestSubsetRows$VAR6[crit] + TestSubsetRows$VAR7[crit] + TestSubsetRows$VAR8[crit] + TestSubsetRows$VAR9[crit] + TestSubsetRows$VAR10[crit] + TestSubsetRows$VAR11[crit] + TestSubsetRows$VAR12[crit] + TestSubsetRows$VAR13[crit], family=binomial(link = "logit")),type= "response")
+predict(my_model,(TestSubsetRows$TARGET[crit] ~ TestSubsetRows$VAR1[crit] + TestSubsetRows$VAR2[crit] + TestSubsetRows$VAR3[crit] + TestSubsetRows$VAR4[crit] + TestSubsetRows$VAR5[crit] + TestSubsetRows$VAR6[crit] + TestSubsetRows$VAR7[crit] + TestSubsetRows$VAR8[crit] + TestSubsetRows$VAR9[crit] + TestSubsetRows$VAR10[crit] + TestSubsetRows$VAR11[crit] + TestSubsetRows$VAR12[crit] + TestSubsetRows$VAR13[crit]),type= "response")
+predict(my_model,testSubsetRows,type= "response")
+predict(my_model,testSubsetRows,"response")
+predict(my_model,TestSubsetRows$TARGET[crit] ~ TestSubsetRows$VAR1[crit] + TestSubsetRows$VAR2[crit] + TestSubsetRows$VAR3[crit] + TestSubsetRows$VAR4[crit] + TestSubsetRows$VAR5[crit] + TestSubsetRows$VAR6[crit] + TestSubsetRows$VAR7[crit] + TestSubsetRows$VAR8[crit] + TestSubsetRows$VAR9[crit] + TestSubsetRows$VAR10[crit] + TestSubsetRows$VAR11[crit] + TestSubsetRows$VAR12[crit] + TestSubsetRows$VAR13[crit],"response")
+head(testSubsetRows)
+predict(my_model,testX,"response")
+testXresult>-predict(my_model,testX,"response")
+testXresult<-predict(my_model,testX,"response")
+summary(textXresult)
+testXresult
+summary(testXdata)
+summar(testXresult)
+summary(testXresult)
+head(testXresult)
+dim(testXresult)
+testXresult
+dim(testX)
+testXresult<-predict(my_model,testX,"response")
+help(predict)
+dim(testXresult)
+head(testXresult)
+testY
+testXresult<-predict(my_model,testX,"response")
+len(testX)
+length(testX)
+dim(testX)
+mod1=glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, FAMILY=binomial(link="logit",data=lassoData)
+)
+mod1=glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, FAMILY=binomial(link="logit",data=lassoData))#
+summary(mod1)
+mod1 = glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, family=binomial(link="logit",data=lassoData))#
+summary(mod1)
+mod1 = glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, family=binomial(link="logit"),data=lassoData)#
+summary(mod1)
+newPred = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaieve = sum(abs(testY-newPred))#
+precentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+predNaive = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaieve = sum(abs(testY-newPred))#
+precentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+predNaive = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaive = sum(abs(testY-newPred))#
+precentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+predNaive = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaive = sum(abs(testY-newPred))#
+percentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+percentCorrectNaive
+help(cv)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0.6,0.4,0.2,0.3) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0,0,0,0) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0.6,0.4,0.2,0.3) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+head(my_model)
+colnames(my_model)
+my_model
+Install.packages(“KermSmooth”)
+library(KernSmooth)
+read.csv("001.csv")
+For (i in id) {#
+  monitoring_stations <- sapply(paste(i,sep=".csv"), read.csv)#
+  ColMeans(i[pollutant], na.rm = FALSE)#
+}

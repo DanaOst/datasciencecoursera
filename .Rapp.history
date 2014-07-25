@@ -1,0 +1,272 @@
+testXresult>-predict(my_model,testX,"response")
+testXresult<-predict(my_model,testX,"response")
+summary(textXresult)
+testXresult
+summary(testXdata)
+summar(testXresult)
+summary(testXresult)
+head(testXresult)
+dim(testXresult)
+testXresult
+dim(testX)
+testXresult<-predict(my_model,testX,"response")
+help(predict)
+dim(testXresult)
+head(testXresult)
+testY
+testXresult<-predict(my_model,testX,"response")
+len(testX)
+length(testX)
+dim(testX)
+mod1=glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, FAMILY=binomial(link="logit",data=lassoData)
+)
+mod1=glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, FAMILY=binomial(link="logit",data=lassoData))#
+summary(mod1)
+mod1 = glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, family=binomial(link="logit",data=lassoData))#
+summary(mod1)
+mod1 = glm(TARGET~VAR1+VAR2+VAR3+VAR4+VAR5+VAR6+VAR7+VAR8+VAR9+VAR10+VAR11+VAR12+VAR13, family=binomial(link="logit"),data=lassoData)#
+summary(mod1)
+newPred = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaieve = sum(abs(testY-newPred))#
+precentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+predNaive = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaieve = sum(abs(testY-newPred))#
+precentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+predNaive = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaive = sum(abs(testY-newPred))#
+precentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+predNaive = predict(mod1, newdata=testX,type="response")#
+newPred = rep(0,length(predNaive))#
+newPred[which(predNaive>.5)] = 1#
+rmseNaive = sum(abs(testY-newPred))#
+percentCorrectNaive = (length(predNaive)-rmseNaive)/length(predNaive)*100
+percentCorrectNaive
+help(cv)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0.6,0.4,0.2,0.3) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0,0,0,0) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+ex = c(1,0.31,0.74,0.34,0.3,0,0.5,0,0,.5,0.6,0.4,0.2,0.3) #
+(inverse_logit(sum(my_model$coefficients*ex))*100)
+head(my_model)
+colnames(my_model)
+my_model
+Install.packages(“KermSmooth”)
+library(KernSmooth)
+getwd()
+cd /datasciencecoursera
+misc /Users/danaostfeld/datasciencecoursera
+Misc datasciencecourserra
+Misc datasciencecoursera
+getwd()
+DIR()
+Dir()
+dir()
+Misc datasciencecoursera
+Misc(datasciencecoursera)
+setwd(/Users/danaostfeld/datasciencecoursera)
+setwd(/datasciencecoursera)
+setwd("/Users/danaostfeld/datasciencecoursera")
+getwd()
+read("hw1_data.csv")
+read.csv("hw1_data.csv")
+print("hw1_data.csv", 2)
+list -> "hw1_data.csv"
+list
+hw1_data.csv
+print (""hw1_data.csv"[[1]],[152]")
+print (""hw1_data.csv"[[1]],[152])
+print ("hw1_data.csv"[[1]],[152])
+print ("hw1_data.csv"[[1]])
+print ("hw1_data.csv"[[1]],[1])
+print ("hw1_data.csv"[[1]][152:153,])
+print ("hw1_data.csv"[[1]][152,])
+hw1_data -> "hw1_data.csv"
+x <-data.frame("hw1_data.csv")
+x
+x <- data.frame("hw1_data.csv")
+x
+read.csv("hw1_data.csv")
+tablex <- read.csv("hw1_data.csv")
+tablex
+tablex(1:2)
+print tablex(1:2,)
+print tablex(2,0)
+tablex(2,0)
+tablex
+nrows(tablex)
+nrow(tablex)
+tablex[[2]]
+tablex[[1,0]]
+tablex[[2]]
+tablex[2]
+tablex[2,0]
+tablex
+tablex[2,0]
+tablex[c[1,2]]
+tablex[2,]
+tablex[3,]
+tablex[c[2,3]]
+tablex[c(2,3)]
+tablex[c((,2)(,3))]
+tablex[,2:3]
+tablex[,2]
+tablex[2,]
+tablex[c(2,),(3,)]
+tablex[c((2,),(3,))]
+tablex[,153]
+tablex[,152]
+tablex[152,]
+tablex[c([152,],[153,])]
+tablex[[c(1,2:3)]]
+tablex[[c(1,2:3,)]]
+tablex[1:3,]
+tablex[152:153,]
+tablex[47,]
+bad<-is.na(tablex)
+bad<-is.na(tablex[,1])
+bad
+x(bad)
+x[bad]
+x[bad[,1]
+bad
+x[!bad]
+x[bad(,1)]
+tablex[bad]
+tablex[,bad]
+tablex[,1[bad]]
+tablex[,1][bad]
+nrows[tablex[,1][bad]]
+nrows(tablex[,1][bad])
+nrows(tablex[,1])
+tablex[,1]
+nrow(tablex[,1])
+nrow(na.omit(tablex[,1]))
+nrow(tablex)
+tablex
+tabley <- tablex[,1]
+tabley
+nrow(tabley)
+ncol(tabley)
+nrow(na.omit(tabley))
+nrow(na.omit(tablex[,1]))
+nrow(tablex)
+tablez <-na.omit(tablex[,1])
+nrow(tablez)
+tablex[,1][bad]
+badrows <-tablex[,1][bad]
+nrow(badrows)
+colSums(tablex[,1])
+colSums(tablex)
+tablex
+colSums(tablex)
+colSums(is.na(tablex))
+mean(tablex)
+colMeans(tablex)
+colMeans(!is.na(tablex))
+tablex
+tabley <- !is.na(tablex[,1])
+tabley
+tabley <- tablex[,1]
+tabley
+bad <- is.na(tabley)
+tabley(!is.bad)
+tabley[!is.bad]
+tabley[!bad]
+tablez <- tabley[!bad]
+tablez
+colMeans(tablez)
+means(tablez)
+mean(tablez)
+tablex
+tablexyz <- tablex(,[1]>31)
+tablex[,[[1]]>31]
+good <- tablex[,1]>31
+good
+goodtemp <- table[,4]>90
+goodtemp <- tablex[,4]>90
+goodtemp
+tablex[,good][,goodtemp]
+tablex[,1][good]
+tablex[good][goodtemp]
+tablex[1:6,]
+tablex[,good[,1]]
+tablex[,good]
+tablex[good]
+tablex[,1:6][good]
+tablex[,1][good][,1:6]
+good
+complete.cases(tablex[,1][good])
+tablex[good[,1]]
+tablex[,good[,1]]
+tablex[good][,1]
+tablex[,good][,1]
+tablex[,1][good]
+tablex[good]
+tablex[,1:6][good]
+complete.cases(tablex)
+better <- complete.cases(tablex)
+better
+tablex
+goodozone <- tablex[,1]>31
+goodozone
+goodtemp
+tablex[goodozone][,1]
+tablex[,1][goodozone]
+tabley<-complete.cases(tablex)
+tabley
+tablex(tabley)
+tablex[tabley]
+tablex[,tabley]
+tablex[tabley,]
+tablez <- tablex[tabley,]
+tablez
+tablez[,1][goodozone]
+goodozone <- tablez[,1]>31
+goodtemp <- tablez[,4]>90
+tablez[goodozone,][goodtemp,]
+tablez[goodozone,]
+tablea <- tablez[goodozone,]
+goodtemp[,4]>90
+goodtemp <-tablea[,4]>90
+tableb <- tablea[goodtemp,]
+tableb
+colMeans(tableb)
+tablex
+monthsix <- tablex[,5]=6
+monthsix <- tablex[,5]==6
+monthsix
+tableb <- tablex[monthsix,]
+tableb
+colMeans(tableb)
+tablefinal <- tablex[,5]==5
+tablefinally <-tablex[tablefinal,]
+tablefinally
+colMax(tablefinally)
+colMaxs(tablefinally)
+colMeans(tablefinally)
+colMaxs(tablefinally)
+range(tablefinally)
+colmax(tablefinally)
+colmaxs(tablefinally)
+max(tablefinally)
+max(tablefinally[,1])
+newlist<-is.na(tablex[,1])
+newlist
+tabled <-tablex[newlist,]
+tabled
+nrows(tabled)
+nrow(tabled)
+153-57
+tablef<-tablex[!newlist,]
+tablef
+meanCols(tablef)
+colMeans(tablef)
+tablex
+R.version.string
